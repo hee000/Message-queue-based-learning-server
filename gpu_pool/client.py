@@ -43,6 +43,8 @@ def start():
                 for idx, name in enumerate(MESSAGE_COLUMNS):
                     if name in ARGS_EXCEPTION:
                         continue
+                    if args_value[idx] == None:
+                        continue
                     args += f'--{name} {args_value[idx]} '
 
                 utils.subprocess(f'pip install -r {CWD}/requirements.txt')
