@@ -6,13 +6,19 @@ import utils
 from env import MESSAGE_FILE_PATH
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(usage='use "python %(prog)s -h --help" for more information',formatter_class=argparse.RawTextHelpFormatter)
 
     parser.add_argument(
         'mode',
-        metavar='str',
+        metavar='Select one among server, client, push, message, error',
         type=str,
-        help='mode = (server, client, push, message, error)'
+        help='''
+        server - Run mysql server
+        client - Run the message queue based auto-learning client
+        push - Push message to queue
+        message - Check message list
+        error - Check error message list
+        '''
     )
     parser.add_argument(
         '-i',
