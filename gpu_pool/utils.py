@@ -2,7 +2,7 @@ import subprocess as sp
 from env import CWD, MYSQL_SERVER_PORT, MYSQL_SERVER_USER, MYSQL_SERVER_PASSWORD
 
 def subprocess(command: str) -> sp.CompletedProcess[str]:
-    return sp.run(command, capture_output=True, shell=True)
+    return sp.run(command, capture_output=True, text=True, shell=True)
 
 def start_server() -> None:
     check_installation('mysql-server')
